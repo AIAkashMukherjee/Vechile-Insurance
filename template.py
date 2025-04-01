@@ -20,7 +20,7 @@ list_of_files = [
     "src/cloud_storage/__init__.py",
     "src/cloud_storage/aws_storage.py",
     "src/data_access/__init__.py",
-    "src/data_access/proj1_data.py",
+    "src/data_access/vechile_data.py",
     "src/constants/__init__.py",
     "src/entity/__init__.py",
     "src/entity/config_entity.py",
