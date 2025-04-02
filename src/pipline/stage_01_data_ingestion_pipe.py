@@ -7,9 +7,6 @@ from src.logger.custom_logging import logger
 from src.exception.expection import CustomException
 
 
-
-
-STAGE_NAME = "Data Ingestion stage"
 class DataIngestionPipe:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
@@ -25,10 +22,10 @@ class DataIngestionPipe:
 
 if __name__ == '__main__':
     try:
-        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+
         obj = DataIngestionPipe()
         obj.main()
-        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+
     except Exception as e:
         logger.exception(e)
         raise e               
