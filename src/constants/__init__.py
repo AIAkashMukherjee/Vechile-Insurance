@@ -5,6 +5,8 @@ load_dotenv()
 
 uri = os.getenv('MONGODB_URI')
 db_name = os.getenv('db_name')
+access_key=os.getenv('AWS_ACCESS_KEY_ID')
+secret_key=os.getenv('AWS_SECRET_KEY')
 
 # For MongoDB connection
 DATABASE_NAME = db_name
@@ -26,8 +28,8 @@ TEST_FILE_NAME: str = "test.csv"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 
 
-AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
-AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
+AWS_ACCESS_KEY_ID_ENV_KEY = access_key
+AWS_SECRET_ACCESS_KEY_ENV_KEY = secret_key
 REGION_NAME = "us-east-1"
 
 
@@ -73,8 +75,8 @@ MODEL_TRAINER_RANDOM_STATE: int = 42
 """
 MODEL Evaluation related constants
 """
-MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.1
+MODEL_BUCKET_NAME = "vechile-insurance"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 

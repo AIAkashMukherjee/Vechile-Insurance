@@ -2,6 +2,7 @@ import os
 from src.constants import *
 from dataclasses import dataclass
 from datetime import datetime
+from pathlib import Path
 
 TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 
@@ -50,3 +51,14 @@ class ModelTrainerConfig:
     _max_depth = MODEL_TRAINER_MAX_DEPTH
     _random_state = MODEL_TRAINER_RANDOM_STATE     
     _subsample=MODEL_TRAINER_SUBSAMPLE
+   
+@dataclass
+class ModelEvaluationConfig:
+    changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
+    bucket_name: str = MODEL_BUCKET_NAME
+    s3_model_key_path: str = MODEL_FILE_NAME
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name: str = MODEL_BUCKET_NAME
+    s3_model_key_path: str = MODEL_FILE_NAME
