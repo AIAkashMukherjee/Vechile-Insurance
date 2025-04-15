@@ -44,7 +44,7 @@ class SimpleStorageService:
         except Exception as e:
             raise CustomException(e,sys)
 
-    def load_model(self,model_name,bucket_name,model_dir):
+    def load_model(self,model_name,bucket_name,model_dir: str = None):
         try:
             model_file = model_dir + "/" + model_name if model_dir else model_name
             file_object = self.get_file_object(model_file, bucket_name)

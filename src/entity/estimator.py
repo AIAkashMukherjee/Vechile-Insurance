@@ -34,6 +34,11 @@ class MyModel:
         try:
             logging.info("Starting prediction process.")
 
+            dataframe.columns = dataframe.columns.str.strip()  # Remove leading/trailing spaces
+            if "id" in dataframe.columns:
+                logging.info(f"Found 'id' column, dropping it before transformation.")
+                dataframe = dataframe.drop(columns=["id"])
+
             # Step 1: Apply scaling transformations using the pre-trained preprocessing object
             transformed_feature = self.preprocessing_object.transform(dataframe)
 

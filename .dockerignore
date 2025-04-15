@@ -1,0 +1,10 @@
+artifact
+my_env
+.env
+.gitignore
+logs
+template.py
+README.md
+LICENSE
+research
+Vechile_Insurance_Prediction.egg-info
